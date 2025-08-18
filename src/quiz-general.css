@@ -1,0 +1,40 @@
+/* src/quiz-general.css */
+
+/* layout helpers (reuses your global styles where possible) */
+.gq-row { display: grid; gap: 12px; }
+
+.question { font-weight: 600; font-size: 18px; margin: 8px 0 16px; }
+
+/* choices */
+.gq-option {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.gq-option input { pointer-events: none; }
+.gq-option.selected { border-color: #111827; background: #f8fafc; }
+
+/* result colors (uses your existing .answer styles if present) */
+.answer { font-size: 14px; }
+.answer.ok { color: #047857; }
+.answer.bad { color: #be123c; }
+.results .gq-item { border-top: 1px solid #e5e7eb; padding: 12px 0; }
+.results .gq-item:first-child { border-top: none; }
+
+/* modal */
+.gq-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px; z-index: 1000;
+}
+.gq-modal { max-width: 640px; width: 100%; }
+.gq-modal-title { margin-top: 0; }
+.gq-modal-body { margin: 12px 0; }
+.gq-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+.gq-modal-p { margin-bottom: 8px; }
+.gq-muted { color: #475569; }
