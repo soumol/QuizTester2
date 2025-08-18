@@ -11,7 +11,7 @@ export default function Home() {
         <p>
           CeliacSmart is a welcoming, all-in-one educational platform developed under the guidance of the
           Children’s Hospital Colorado Celiac Center team dedicated to empowering children and families living
-          with celiac disease. We hope to help you navigate the challenges of Celiac disease by providing reliable and medically sound information
+          with celiac disease.
         </p>
         <p>The mission is to…</p>
         <ul>
