@@ -24,41 +24,37 @@ export const LABEL_KIDS_QUESTIONS = [
   { id: "k4", type: "yn", image: "/labels/wheat_free_icon.png",
     question: "Is this the same as gluten-free?",
     answer: "No",
-    explanation: "‘Wheat-free’ is not the same as gluten-free; barley or rye may still be present." },
+    explanation: "'Wheat-free' is not the same as gluten-free; barley or rye may still be present." },
 
   { id: "k5", type: "yn", image: "/labels/fake_gf_symbol.png",
-    question: "Is this a recognised/certified gluten-free symbol?",
-    answer: "No",
-    explanation: "Some icons look like GF but are not official certifications." },
-
-  { id: "k6", type: "mcq", image: "/labels/eu_organic_leaf.png",
-    question: "What does this symbol mean?",
-    choices: [
-      "No wheat", "Gluten-Free", "Caution",
-      "Organic product EU certified (European Commission)"
-    ],
-    answer: "Organic product EU certified (European Commission)",
-    explanation: "The EU organic leaf is not a gluten-free certification." },
-
-  { id: "k7", type: "yn", image: "/labels/eu_organic_leaf.png",
-    question: "Is this a certified gluten-free symbol?",
-    answer: "No",
-    explanation: "Organic ≠ gluten-free." },
-
-  { id: "k8", type: "yn", image: "/labels/crackers_eu_gf.jpg",
-    question: "Are these crackers products certified gluten-free?",
+    question: "Would a product with this symbol be safe to eat on a gluten free diet?",
     answer: "Yes",
-    explanation: "The EU-recognized GF logo indicates the product is certified GF." },
+    explanation: "The word 'gluten-free' on any product subjects the product to FDA regulations." },
+
+{ id: "k6", type: "yn", image: "/labels/GF_chocolate_cake.jpg",
+    question: "Is this cake safe to consume?",
+    answer: "Yes",
+    explanation: "The word 'gluten-free' on any product subjects the product to FDA regulations." },
+
+{ id: "k7", type: "yn", image: "/labels/GF_pancakes.jpg",
+    question: "Is this pancake mix safe to consume?",
+    answer: "Yes",
+    explanation: "GFCO certified." },
+
+{ id: "k8", type: "yn", image: "/labels/GF_granola_bar.png",
+    question: "Are these granola bars safe to consume?",
+    answer: "Yes",
+    explanation: "The word 'gluten-free' on any product subjects the product to FDA regulations and these are NSF certified as well!" },
 
   { id: "k9", type: "yn", image: "/labels/granola_gfco.jpg",
     question: "Is this granola safe for someone with celiac disease?",
     answer: "Yes",
     explanation: "The GFCO logo shows third-party gluten-free certification." },
 
-  { id: "k10", type: "yn", image: "/labels/cracker_snacks_eu_gf.jpg",
-    question: "Are these cracker snacks safe to consume on a GF diet?",
+  { id: "k10", type: "yn", image: "/labels/GF_chicken_nuggets.png",
+    question: "Are these breaded chicken nuggets safe for someone with celiac disease?",
     answer: "Yes",
-    explanation: "EU-recognized GF logo indicates certified gluten-free." },
+    explanation: "The word 'gluten-free' on any product subjects the product to FDA regulations." },
 
   { id: "k11", type: "yn", image: "/labels/toffee_gfco.jpg",
     question: "Are these toffee chocolates certified as a GF free product?",
@@ -70,10 +66,10 @@ export const LABEL_KIDS_QUESTIONS = [
     answer: "Yes",
     explanation: "GFCO certified pasta is gluten-free." },
 
-  { id: "k13", type: "yn", image: "/labels/fusilli_eu_gf.jpg",
-    question: "Is this fusilli pasta gluten free?",
-    answer: "Yes",
-    explanation: "Shows an EU-recognized gluten-free logo." },
+  { id: "k13", type: "yn", image: "/labels/chicken_nuggets.jpg",
+    question: "Are these chicken nuggets safe to eat on a gluten free diet?",
+    answer: "No",
+    explanation: "There is no gluten free claim nor certification." },
 
   { id: "k14", type: "yn", image: "/labels/cookies_gfco.jpg",
     question: "Are these cookies safe to eat on a gluten free diet?",
@@ -93,7 +89,7 @@ export const LABEL_KIDS_QUESTIONS = [
   { id: "k17", type: "yn", image: "/labels/cookies_uncertified.jpg",
     question: "Are these cookies safe to eat on a GF diet?",
     answer: "No",
-    explanation: "No certification and unclear ingredients—assume not safe." },
+    explanation: "Not advertised as gluten free and unclear ingredients." },
 
   { id: "k18", type: "yn", image: "/labels/bread_gfco.jpg",
     question: "Is this bread gluten free?",
@@ -130,12 +126,12 @@ export const LABEL_KIDS_QUESTIONS = [
   { id: "k24", type: "yn",
     question: "You see 'certified gluten-free oats' in cookies. Is that okay?",
     answer: "Yes",
-    explanation: "Certified/purity protocol oats are considered safe for most celiacs." },
+    explanation: "Certified/purity protocol oats are considered safe for celiacs." },
 
   { id: "k25", type: "mcq",
     question: "What should you look for on a snack label to know it's gluten-free?",
-    choices: ["A gluten-free logo", "A big green leaf", "A low sugar claim"],
-    answer: "A gluten-free logo",
+    choices: ["The word gluten-free or a gluten free label", "A big green leaf", "A low sugar claim"],
+    answer: "The word gluten-free or a gluten free label",
     explanation: "Look for a recognized GF certification or a clear GF claim." },
 
   { id: "k26", type: "mcq",
@@ -150,9 +146,9 @@ export const LABEL_KIDS_QUESTIONS = [
     explanation: "Barley or rye can still be present." },
 
   { id: "k28", type: "yn",
-    question: "You see a cookie that says 'no gluten ingredients.' Is it definitely safe?",
-    answer: "No",
-    explanation: "Without certification or controls, it could still be contaminated." },
+    question: "You see a cookie that says 'no gluten ingredients.' Is it safe to consume?",
+    answer: "Yes",
+    explanation: "The claim 'no gluten' subjects the cookie to meet FDA regulation standards." },
 
   { id: "k29", type: "mcq",
     question: "Which one is a gluten-free ingredient?",
@@ -166,16 +162,16 @@ export const LABEL_KIDS_QUESTIONS = [
     explanation: "Wheat-derived syrup isn’t reliably gluten-free." },
 
   { id: "k31", type: "yn",
-    question: "A label says 'contains wheat.' What should you do?",
+    question: "A label says 'contains wheat.' Can you eat it?",
     answer: "No",
     explanation: "Avoid it — it contains gluten." },
 
   { id: "k32", type: "mcq",
     question: "Which is safer?",
     choices: [
-      "A candy with no readable label",
+      "A candy with no readable ingredients label",
       "A candy with a GFCO logo",
-      "A candy with a non certified GF label",
+      "A candy with no GF label",
       "A candy with a GFCO logo that is in a shared bowl with other treats"
     ],
     answer: "A candy with a GFCO logo",
@@ -184,7 +180,7 @@ export const LABEL_KIDS_QUESTIONS = [
   { id: "k33", type: "yn",
     question: "The label says: 'Gluten-Free' and shows a certified GF logo. Is it safe?",
     answer: "Yes",
-    explanation: "Certified GF + simple ingredients is considered safe." },
+    explanation: "Certified GF is considered safe." },
 
   { id: "k34", type: "yn",
     question: "The cereal box says 'Wheat-Free' but has malt extract in the ingredients. Is it safe?",
@@ -193,8 +189,8 @@ export const LABEL_KIDS_QUESTIONS = [
 
   { id: "k35", type: "yn",
     question: "A snack bar says 'No gluten ingredients used,' but there’s no logo or certification. Is it safe?",
-    answer: "No",
-    explanation: "Insufficient assurance; could be contaminated." },
+    answer: "Yes",
+    explanation: "The claim 'no gluten' subjects the product to meet FDA gluten free standards." },
 
   { id: "k36", type: "yn",
     question: "The package says: 'Certified Gluten-Free' and contains rice, sugar, and chocolate chips. Is it safe?",
@@ -219,12 +215,12 @@ export const LABEL_KIDS_QUESTIONS = [
   { id: "k40", type: "yn",
     question: "You see 'natural flavors' listed, and there’s no gluten-free logo. Is it safe?",
     answer: "No",
-    explanation: "‘Natural flavors’ can sometimes include gluten; verify or avoid." },
+    explanation: "‘Natural flavors’ can sometimes include gluten; use caution and verify or avoid." },
 
   { id: "k41", type: "yn",
-    question: "A candy says 'gluten-free' but also says 'not tested for gluten.' Is it safe?",
-    answer: "No",
-    explanation: "Without testing, the claim is unreliable." },
+    question: "A candy says 'gluten-free' but also says 'not tested for wheat.' Is it safe?",
+    answer: "Yes",
+    explanation: "Meets FDA gluten free standards." },
 
   { id: "k42", type: "yn",
     question: "A bag of gluten-free pretzels is next to a torn open bag of wheat pretzels on the same shelf. Is it safe?",
@@ -243,18 +239,18 @@ export const LABEL_KIDS_QUESTIONS = [
 
   { id: "k45", type: "yn",
     question: "A label says: 'No gluten,' but you don’t recognize the brand and there’s no certification. Is it safe?",
-    answer: "No",
-    explanation: "Lack of certification and unknown controls — avoid or verify." },
+    answer: "Yes",
+    explanation: "Use of no gluten claim on packaging means it meets FDA gluten free standards." },
 
   { id: "k46", type: "yn",
     question: "The bread says: 'Gluten-Free' and also 'Certified by GFCO.' Is it safe?",
     answer: "Yes",
     explanation: "Certification confirms testing to a threshold." },
 
-  { id: "k47", type: "yn",
-    question: "A soup has 'vegetable broth' listed, but no other info. Is it safe?",
+    { id: "k47", type: "yn",
+    question: "A soup says 'contains soy sauce'. Is it safe?",
     answer: "No",
-    explanation: "Broths can hide gluten (malt extract, hydrolyzed wheat); verify first." },
+    explanation: "Traditional soy sauce is made from wheat, soybeans, salt, and water." },
 
   { id: "k48", type: "yn",
     question: "A protein bar lists spelt in the ingredients. Is it safe?",
