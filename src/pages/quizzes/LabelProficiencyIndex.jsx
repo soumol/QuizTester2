@@ -19,7 +19,6 @@ export default function LabelProficiencyIndex() {
             <h3>Standard</h3>
             <p>Advanced label literacy, tricky ingredients, global certifications.</p>
             <Link className="btn btn-secondary" to="/quizzes/label-proficiency/standard">Start Standard</Link>
-            <p className="small" style={{ marginTop: 6 }}>We’ll add this next.</p>
           </div>
         </div>
       </div>

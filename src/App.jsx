@@ -8,6 +8,7 @@ import Resources from './pages/Resources.jsx'
 import GeneralKnowledge from './pages/quizzes/GeneralKnowledge.jsx'
 import LabelProficiencyIndex from './pages/quizzes/LabelProficiencyIndex.jsx'
 import LabelProficiencyEasy from './pages/quizzes/LabelProficiencyEasy.jsx'
+import LabelProficiencyStandard from './pages/quizzes/LabelProficiencyStandard.jsx'
 // (We’ll add Standard later)
 
 
@@ -26,7 +27,7 @@ export default function App() {
           <Route path="/quizzes/label-proficiency" element={<LabelProficiencyIndex />} />
           <Route path="/quizzes/label-proficiency/easy" element={<LabelProficiencyEasy />} />
           {/* Placeholder for later */}
-          <Route path="/quizzes/label-proficiency/standard" element={<div className="container"><div className="card"><h1>Standard quiz coming next</h1></div></div>} />
+          <Route path="/quizzes/label-proficiency/standard" element={<LabelProficiencyStandard />} />
         </Routes>
       </main>
     </div>

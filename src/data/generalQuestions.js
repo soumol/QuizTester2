@@ -9,7 +9,7 @@ export const GENERAL_QUESTIONS = [
     choices: ["Casein", "Gliadin", "Starch", "Maltose"],
     answer: "Gliadin",
     explanation:
-      "Gliadin is a component of gluten that triggers the autoimmune reaction in people with celiac disease."
+      "Gliadin is the component of gluten that most commonly triggers the autoimmune reaction in people with celiac disease."
   },
   {
     id: "mcq2",
@@ -36,7 +36,7 @@ export const GENERAL_QUESTIONS = [
     choices: ["Bloating", "Diarrhea", "High blood pressure", "Fatigue"],
     answer: "High blood pressure",
     explanation:
-      "Hypertension is not a typical direct symptom of celiac disease."
+      "High blood pressure is not a typical direct symptom of celiac disease."
   },
   {
     id: "mcq5",
@@ -46,7 +46,7 @@ export const GENERAL_QUESTIONS = [
     choices: ["Allergic reaction", "Autoimmune response", "Bacterial infection", "Genetic mutation"],
     answer: "Autoimmune response",
     explanation:
-      "It’s an autoimmune condition—your immune system attacks your own tissues."
+      "Celiac is an autoimmune condition — your immune system attacks your own tissues following gluten exposure."
   },
   {
     id: "mcq6",
@@ -209,9 +209,9 @@ export const GENERAL_QUESTIONS = [
   },
 
   // ========== TRUE / FALSE ==========
-  { id: "tf1", type: "tf", question: "Celiac disease is a food allergy.", answer: "False", explanation: "It’s an autoimmune disease triggered by gluten exposure." },
+  { id: "tf1", type: "tf", question: "Celiac disease is a food allergy.", answer: "False", explanation: "Celiac disease is an autoimmune disease triggered by gluten exposure." },
   { id: "tf2", type: "tf", question: "People with celiac can sometimes “cheat” and eat gluten.", answer: "False", explanation: "Even small amounts can cause damage and symptoms." },
-  { id: "tf3", type: "tf", question: "Gluten-free oats are always safe for people with celiac disease.", answer: "False", explanation: "Choose certified gluten-free oats to avoid cross-contact." },
+  { id: "tf3", type: "tf", question: "Oats are always safe for people with celiac disease.", answer: "False", explanation: "Choose certified gluten-free oats to avoid cross-contact." },
   { id: "tf4", type: "tf", question: "Celiac disease can affect people of any age.", answer: "True", explanation: "It can present in childhood or adulthood." },
   { id: "tf5", type: "tf", question: "The damage in celiac disease is reversible with a gluten-free diet.", answer: "True", explanation: "Villi typically heal with strict gluten avoidance." },
   { id: "tf6", type: "tf", question: "Dermatitis herpetiformis always appears with gut symptoms.", answer: "False", explanation: "DH can occur with minimal or no GI symptoms." },
@@ -222,13 +222,13 @@ export const GENERAL_QUESTIONS = [
 
   // ========== YES / NO ==========
   { id: "yn1", type: "yn", question: "Can children with celiac disease have delayed growth?", answer: "Yes", explanation: "Malabsorption can reduce key nutrients for normal growth." },
-  { id: "yn2", type: "yn", question: "Is there a cure for celiac disease?", answer: "No", explanation: "There is no cure; strict gluten avoidance is the treatment." },
-  { id: "yn3", type: "yn", question: "Should people with celiac avoid shared kitchen tools with gluten?", answer: "Yes", explanation: "Shared tools can cause cross-contact—use separate/dedicated items." },
+  { id: "yn2", type: "yn", question: "Is there a definitive cure for celiac disease?", answer: "No", explanation: "There is currently no 'cure'; strict gluten avoidance is the best existing treatment." },
+  { id: "yn3", type: "yn", question: "Should people with celiac avoid eating out at restaurants?", answer: "NO!", explanation: "Check in with servers to verify that the restaurant vigilantly adheres to gluten free standards when cooking their GF dishes :))" },
   { id: "yn4", type: "yn", question: "Is fatigue a common symptom of untreated celiac disease?", answer: "Yes", explanation: "Common due to nutrient deficiencies and inflammation." },
   { id: "yn5", type: "yn", question: "Can celiac disease cause problems outside the gut?", answer: "Yes", explanation: "Includes anemia, skin disease, bone loss, neurologic issues, etc." },
   { id: "yn6", type: "yn", question: "Should someone start a gluten-free diet before diagnosis?", answer: "No", explanation: "It can normalize tests and complicate diagnosis—test first." },
   { id: "yn7", type: "yn", question: "Is iron-deficiency anemia common in celiac disease?", answer: "Yes", explanation: "Due to proximal small bowel malabsorption." },
   { id: "yn8", type: "yn", question: "Can someone with celiac eat sourdough bread made with wheat?", answer: "No", explanation: "Fermentation doesn’t reliably reduce gluten to safe levels." },
-  { id: "yn9", type: "yn", question: "Do you have to be genetically tested to diagnose celiac?", answer: "No", explanation: "HLA-DQ2/DQ8 helps but isn’t required; serology ± biopsy diagnose." },
+  { id: "yn9", type: "yn", question: "Do you have to be genetically tested to diagnose celiac?", answer: "No", explanation: "HLA-DQ2/DQ8 helps but isn’t required; serology ± biopsy are used to diagnose." },
   { id: "yn10", type: "yn", question: "Can even a small amount of gluten exposure cause symptoms in someone with celiac?", answer: "Yes", explanation: "Trace exposure can trigger immune activation and symptoms." }
 ];
