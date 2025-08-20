@@ -15,7 +15,7 @@ export default function AboutCeliac() {
       <section className="card">
         <h2>What Is Celiac Disease?</h2>
         <p>
-          Celiac disease is a chronic autoimmune condition triggered by the ingestion of gluten, a protein found
+          Celiac disease is a <strong>chronic autoimmune condition</strong> triggered by the ingestion of gluten, a protein found
           in wheat, barley, and rye. In people with celiac disease, the immune system mistakenly attacks the
           small intestine when gluten is consumed.
         </p>
@@ -47,6 +47,7 @@ export default function AboutCeliac() {
 
         <div className="about__group">
           <h3>Digestive Problems</h3>
+          <p>Because nutrients and fluids aren’t absorbed well, people may experience:</p>
           <ul>
             <li><strong>Bloating</strong> from poor digestion and excess gas production</li>
             <li><strong>Diarrhea</strong> from unabsorbed nutrients drawing water into the intestines</li>
@@ -100,19 +101,19 @@ export default function AboutCeliac() {
         <h2>How Is Celiac Disease Diagnosed?</h2>
 
         <div className="about__group">
-          <h3>Serologic Blood Tests (tTG-IgA)</h3>
+          <h3>Serologic Blood Tests (tTG-IgA, EMA, and DGP)</h3>
           <ul>
             <li>
-              A key diagnostic marker is anti-tissue transglutaminase IgA (<strong>tTG-IgA</strong>), an
-              antibody that rises in response to gluten exposure in celiac disease.
+              One of the main screening tests for celiac disease is anti-tissue transglutaminase IgA (<strong>tTG-IgA</strong>). 
+              When someone with celiac eats gluten, this antibody usually rises because the immune system is attacking both gluten and the small intestine.
             </li>
-            <li>
-              Patients with celiac often have high levels of <strong>IgA antibodies</strong>, which are part of
-              the immune response attacking both gluten and intestinal tissue.
-            </li>
+            <p>
+              Doctors may also use other blood tests:
+              <li><strong>EMA (Endomysial Antibodies)</strong>: Very specific for celiac disease. If positive, it strongly supports the diagnosis, though it’s not ordered as often.</li>
+              <li><strong>DGP (Deamidated Gliadin Peptide Antibodies)</strong>: Helpful in young children or when tTG-IgA results are unclear.</li>
+            </p>
             <li className="note">
-              Note: A <strong>total serum IgA</strong> test is sometimes done to rule out IgA deficiency, which
-              can give false negatives on standard celiac tests.
+              Note: Some people don’t make enough IgA (known as <strong>IgA deficiency</strong>), a total IgA test is usually done at the same time. This prevents false-negative results and ensures the tests are reliable.
             </li>
           </ul>
         </div>
@@ -143,28 +144,29 @@ export default function AboutCeliac() {
           <h3>Strict, Lifelong Gluten-Free Diet</h3>
           <p>
             The only current treatment for celiac disease is completely avoiding gluten. This means cutting out
-            all foods and products that contain wheat, barley, rye, and most oats (unless labeled gluten-free).
+            all foods and products that contain wheat, barley, rye, and ingredients derived from those grains.
             Even small amounts of gluten can cause symptoms and intestinal damage.
           </p>
         </div>
 
         <div className="about__group">
           <h3>Close Nutritional Monitoring & Regular Checkups</h3>
+          <p>People with celiac disease need ongoing care to ensure they’re:</p>
           <ul>
             <li>Ensure adequate intake of key nutrients (iron, calcium, B12, etc.)</li>
-            <li>Assess healing progress and symptom control</li>
-            <li>Use labs, bone density scans, and dietitian support as needed</li>
+            <li>Assess healing progress</li>
+            <li>Effective symptom control</li>
           </ul>
+          <li className="note">
+              Note: Doctors may recommend <strong>blood tests</strong>, <strong>bone density scans</strong>, and <strong>dietitian support</strong> to track progress.
+            </li>
         </div>
 
         <div className="about__group">
           <h3>Avoiding Cross-Contamination</h3>
-          <p>Even trace amounts of gluten can trigger symptoms. It’s important to:</p>
-          <ul>
-            <li>Use separate cutting boards, cookware, and toasters</li>
-            <li>Read labels carefully for hidden gluten</li>
-            <li>Be cautious when eating out</li>
-          </ul>
+          <p>Even trace amounts of gluten from shared kitchen tools, toasters, or surfaces can trigger symptoms. 
+            It is important to be aware of what cookware in your kitchen can increase the risk of cross-contact with gluten. 
+            Wooden utensils and cast iron skillets pose the highest risk of cross-contact when sharing these items between gluten-free and gluten-containing cooking.</p>
         </div>
 
         <p className="note">
