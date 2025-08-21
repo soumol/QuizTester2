@@ -1,0 +1,254 @@
+/* ========== Cross Contamination (Level Picker + Quiz) ========== */
+/* Uses your existing CSS variables from styles.css:
+   --bg, --card-bg, --text, --muted, --brand, --border, --shadow
+*/
+
+.cc-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.cc-title {
+  font-size: 1.9rem;
+  margin: 0 0 .25rem;
+  color: var(--text);
+}
+
+.cc-sub {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+/* ---------- Level Picker ---------- */
+.cc-level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.cc-level-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.cc-level-card h2 {
+  margin: 0 0 .35rem;
+}
+
+.cc-level-card p {
+  margin: 0 0 .75rem;
+  color: var(--muted);
+}
+
+.cc-btn {
+  display: inline-block;
+  padding: .6rem .9rem;
+  border-radius: 10px;
+  border: 1px solid var(--text);
+  background: var(--text);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cc-btn:hover { filter: brightness(.95); }
+
+.cc-btn-alt {
+  background: transparent;
+  color: var(--text);
+}
+
+.cc-level-disabled { opacity: .6; }
+.cc-btn-disabled { cursor: not-allowed; }
+
+/* ---------- Quiz Header / Progress ---------- */
+.cc-header { margin-bottom: .75rem; }
+
+.cc-progress {
+  position: relative;
+  height: 10px;
+  background: #eee;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: .6rem 0 0;
+}
+
+.cc-progress-bar {
+  height: 100%;
+  background: var(--brand, #0f766e);
+  width: 0;
+  transition: width 220ms ease;
+}
+
+.cc-progress-meta {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: .35rem;
+}
+
+/* ---------- Quiz Card ---------- */
+.cc-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.cc-q {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: .75rem;
+  color: var(--text);
+}
+
+/* Options (YN / TF / MCQ) */
+.cc-options {
+  display: grid;
+  gap: .5rem;
+}
+
+.cc-option {
+  text-align: left;
+  padding: .6rem .8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fafafa;
+  cursor: pointer;
+}
+
+.cc-option:hover { background: #f2f4f7; }
+.cc-option.selected {
+  border-color: var(--text);
+  background: #f8fafc;
+}
+
+/* Actions + Feedback (inline fallback) */
+.cc-actions {
+  margin-top: .9rem;
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cc-feedback {
+  padding: .6rem .8rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.cc-feedback.correct {
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #14532d;
+}
+
+.cc-feedback.incorrect {
+  background: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: #7f1d1d;
+}
+
+.cc-note {
+  font-weight: 400;
+  margin-top: .35rem;
+  color: var(--text);
+}
+
+/* ---------- Answer Modal (popup) ---------- */
+/* Overlay fills the screen */
+.cc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  animation: cc-fade-in .18s ease-out;
+}
+
+/* Modal panel uses same "card" look for consistency */
+.cc-modal {
+  max-width: 640px;
+  width: 100%;
+}
+
+.cc-modal .cc-card {
+  padding: 1.1rem 1.1rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  animation: cc-pop .16s ease-out;
+}
+
+/* Title & body */
+.cc-modal-title { margin: 0 0 .35rem; font-size: 1.25rem; font-weight: 800; color: var(--text); }
+.cc-modal-body { margin: .5rem 0 .75rem; color: var(--text); }
+.cc-modal-p { margin: 0 0 .5rem; }
+.cc-muted { color: var(--muted); }
+
+/* Actions (buttons at bottom-right) */
+.cc-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+}
+
+/* Celebration / thinking icon */
+.cc-celebrate,
+.cc-think {
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.cc-celebrate { animation: cc-bounce .6s ease-out; }
+.cc-think { opacity: .9; }
+
+/* Optional confetti sparkle behind celebration icon */
+.cc-celebrate::after {
+  content: '✦';
+  position: absolute;
+  transform: translate(10px, -8px);
+  font-size: 14px;
+  color: #f59e0b; /* amber */
+  animation: cc-spark .9s ease-out;
+}
+
+/* ---------- Animations ---------- */
+@keyframes cc-pop {
+  0% { transform: translateY(4px) scale(.98); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes cc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cc-bounce {
+  0% { transform: translateY(-2px) scale(1.05); }
+  50% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-1px) scale(1.02); }
+}
+
+@keyframes cc-spark {
+  0% { opacity: 0; transform: translate(10px, -8px) scale(.6) rotate(-10deg); }
+  100% { opacity: 1; transform: translate(10px, -8px) scale(1) rotate(0deg); }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .cc-title { font-size: 1.6rem; }
+  .cc-option { padding: .55rem .7rem; }
+  .cc-btn { padding: .55rem .8rem; }
+}

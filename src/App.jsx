@@ -9,6 +9,9 @@ import GeneralKnowledge from './pages/quizzes/GeneralKnowledge.jsx'
 import LabelProficiencyIndex from './pages/quizzes/LabelProficiencyIndex.jsx'
 import LabelProficiencyEasy from './pages/quizzes/LabelProficiencyEasy.jsx'
 import LabelProficiencyStandard from './pages/quizzes/LabelProficiencyStandard.jsx'
+import CrossContaminationIndex from './pages/quizzes/CrossContaminationIndex.jsx'
+import CrossContaminationBeginner from './pages/quizzes/CrossContaminationBeginner.jsx'
+
 // (We’ll add Standard later)
 
 
@@ -28,6 +31,8 @@ export default function App() {
           <Route path="/quizzes/label-proficiency/easy" element={<LabelProficiencyEasy />} />
           {/* Placeholder for later */}
           <Route path="/quizzes/label-proficiency/standard" element={<LabelProficiencyStandard />} />
+          <Route path="/quizzes/cross-contamination" element={<CrossContaminationIndex />} />
+          <Route path="quizzes/cross-contamination/beginner" element={<CrossContaminationBeginner />} />
         </Routes>
       </main>
     </div>
