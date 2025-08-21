@@ -3,6 +3,7 @@ import React from "react";
 import { LABEL_STANDARD_QUESTIONS } from "../../data/labelStandardQuestions.js";
 import "../../quiz-label.css";
 
+
 function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
 function normalize(v) { return String(v).trim().toLowerCase(); }
 

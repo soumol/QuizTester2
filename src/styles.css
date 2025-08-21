@@ -1,37 +1,144 @@
-:root {
-  --bg: #f7fafc;
-  --card-bg: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --brand: #0f766e;
-  --border: #e2e8f0;
-  --shadow: 0 10px 25px rgba(0,0,0,.06);
+/* ================== CeliacSmart Global Theme v3 ==================
+   Fonts:
+     - Body/UI: Quicksand
+     - Headings: Nunito
+     - Signature bubble (brand/title): Baloo 2
+
+   Colors:
+     - --bg         #F6FAF9   (soft, neutral page background)
+     - --card-bg    #FFFFFF   (clean cards/bubbles)
+     - --text       #0E2433   (ink)
+     - --muted      #5E7486   (secondary text)
+     - --brand      #2AA7A5   (teal primary)
+     - --brand-2    #FF8BA7   (coral secondary)
+     - --border     #E5EEF0   (subtle lines)
+     - --shadow     0 10px 25px rgba(16,24,40,.06)
+
+   Notes:
+     - Nav is light and airy (not dark).
+     - Cards stay white for readability and polish.
+     - Buttons/active states pop with teal/coral.
+   ================================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@600;700;800&family=Quicksand:wght@400;600;700&display=swap');
+
+:root{
+  --bg:#F6FAF9;
+  --card-bg:#FFFFFF;
+  --text:#0E2433;
+  --muted:#5E7486;
+  --brand:#2AA7A5;
+  --brand-2:#FF8BA7;
+  --border:#E5EEF0;
+  --shadow:0 10px 25px rgba(16,24,40,.06);
+
+  /* helpers */
+  --brand-hover:#249792;
+  --brand-2-hover:#ff7697;
+  --ink-on-brand:#ffffff;
+  --ink-on-brand-2:#2B0B16;
 }
 
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--text); background: var(--bg); }
+*{box-sizing:border-box;}
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family:"Quicksand", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.55;
+}
 
-.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
-.stack { display: grid; }
-.stack.gap-md { gap: 16px; }
-.stack.gap-lg { gap: 24px; }
+/* Layout helpers */
+.container{max-width:1000px;margin:0 auto;padding:24px;}
+.stack{display:grid;}
+.stack.gap-md{gap:16px;}
+.stack.gap-lg{gap:24px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
 
-.nav { background: var(--card-bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; }
-.nav-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; }
-.brand { text-decoration: none; font-weight: 800; color: var(--text); }
-.nav-links { display: flex; gap: 12px; }
-.link { text-decoration: none; color: var(--muted); padding: 8px 12px; border-radius: 10px; }
-.link:hover { background: #f1f5f9; }
-.link.active { color: var(--card-bg); background: var(--brand); }
+/* ---------------- NAV ---------------- */
+.nav{
+  background:rgba(255,255,255,.9);
+  backdrop-filter:saturate(140%) blur(6px);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:20;
+}
+.nav-inner{
+  max-width:1000px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 24px;
+}
+.brand{
+  text-decoration:none;
+  color:var(--text);
+  display:inline-flex;align-items:center;
+  gap:8px;
+  font-weight:800;
+  letter-spacing:.2px;
+  /* Signature bubble font for "CeliacSmart" */
+  font-family:"Baloo 2", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size:1.3rem;
+}
+.brand::after{
+  content:"";
+  width:10px;height:10px;border-radius:999px;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  box-shadow:0 0 0 3px rgba(42,167,165,.15);
+}
 
-.hero h1 { margin: 0; font-size: 2rem; }
-.sub { color: var(--muted); margin-top: 6px; }
+.nav-links{display:flex;gap:12px;}
+.link{
+  text-decoration:none;color:var(--muted);
+  padding:8px 12px;border-radius:10px;
+  transition:background .15s ease,color .15s ease;
+}
+.link:hover{background:#F2F7F6;color:var(--text);}
+.link.active{color:var(--ink-on-brand);background:var(--brand);}
 
-.card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); }
-.note { color: var(--muted); font-style: italic; }
+/* ---------------- HEADINGS / HERO ---------------- */
+h1,h2,h3{font-family:"Nunito","Quicksand",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);}
+.hero h1{
+  margin:0;font-size:2.2rem;line-height:1.15;
+  /* Give the main hero/title that bubble personality */
+  font-family:"Baloo 2","Nunito","Quicksand",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  letter-spacing:.3px;
+}
+.sub{color:var(--muted);margin-top:6px;}
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+/* ---------------- CARDS / BUBBLES ---------------- */
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px;
+  box-shadow:var(--shadow);
+  color:var(--text);
+}
+.note{color:var(--muted);font-style:italic;}
 
-.btn { display: inline-block; background: var(--brand); color: #fff; text-decoration: none; padding: 10px 14px; border-radius: 10px; border: none; cursor: pointer; }
-.btn:hover { filter: brightness(0.95); }
+/* ---------------- BUTTONS ---------------- */
+.btn{
+  display:inline-block;
+  background:var(--brand);
+  color:var(--ink-on-brand);
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.05);
+  cursor:pointer;
+  transition:filter .15s ease, transform .03s ease-in, background .15s ease;
+  font-weight:700;
+}
+.btn:hover{background:var(--brand-hover);filter:brightness(0.99);}
+.btn:active{transform:translateY(1px);}
+
+.btn.secondary{
+  background:var(--brand-2);
+  color:var(--ink-on-brand);
+}
+.btn.secondary:hover{background:var(--brand-2-hover);}
+
+/* Links inside content */
+a{color:var(--brand);text-decoration:none;}
+a:hover{text-decoration:underline;}

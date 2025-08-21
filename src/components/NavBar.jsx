@@ -4,16 +4,16 @@ export default function NavBar() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <NavLink to="/" className="brand">QuizTester2</NavLink>
+        <NavLink to="/" className="brand">CeliacSmart</NavLink>
         <nav className="nav-links">
           <NavLink to="/about-celiac" className={({isActive}) => isActive ? 'link active' : 'link'}>
-            about celiac disease
+            About Celiac Disease
           </NavLink>
           <NavLink to="/quizzes" className={({isActive}) => isActive ? 'link active' : 'link'}>
-            educational quizzes
+            Educational Quizzes
           </NavLink>
           <NavLink to="/resources" className={({isActive}) => isActive ? 'link active' : 'link'}>
-            resources
+            Resources
           </NavLink>
         </nav>
       </div>

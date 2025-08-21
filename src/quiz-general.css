@@ -1,40 +1,104 @@
-/* src/quiz-general.css */
+/* ========== General Knowledge — Unified Quiz Theme ========== */
 
-/* layout helpers (reuses your global styles where possible) */
+/* Layout */
 .gq-row { display: grid; gap: 12px; }
 
-.question { font-weight: 600; font-size: 18px; margin: 8px 0 16px; }
+/* Question typography (match CC) */
+.question {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 8px 0 16px;
+  color: var(--text);
+  font-family: "Nunito","Quicksand",system-ui;
+}
 
-/* choices */
+/* Options — same look */
 .gq-option {
   display: flex;
   gap: 12px;
   align-items: center;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   padding: 10px 12px;
   border-radius: 12px;
   cursor: pointer;
+  background: #FAFAFA;
+  color: var(--text);
 }
 .gq-option input { pointer-events: none; }
-.gq-option.selected { border-color: #111827; background: #f8fafc; }
+.gq-option:hover    { background: #F5F7F8; }
+.gq-option.selected { border-color: var(--brand); background: #F9FBFB; }
 
-/* result colors (uses your existing .answer styles if present) */
+/* Results */
 .answer { font-size: 14px; }
-.answer.ok { color: #047857; }
+.answer.ok  { color: #047857; }
 .answer.bad { color: #be123c; }
-.results .gq-item { border-top: 1px solid #e5e7eb; padding: 12px 0; }
+.results .gq-item { border-top: 1px solid var(--border); padding: 12px 0; }
 .results .gq-item:first-child { border-top: none; }
 
-/* modal */
-.gq-modal-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,.5);
-  display: flex; align-items: center; justify-content: center;
-  padding: 16px; z-index: 1000;
+/* ---------- Gradient Progress (same API names as CC, but for GK) ---------- */
+/* If your component renders a .gq-progress / .gq-progress-bar, they'll match CC */
+.gq-progress {
+  position: relative;
+  height: 10px;
+  background: #ECF4F3;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: .6rem 0 0;
 }
-.gq-modal { max-width: 640px; width: 100%; }
-.gq-modal-title { margin-top: 0; }
-.gq-modal-body { margin: 12px 0; }
-.gq-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.gq-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--brand-2) 100%);
+  transition: width 220ms ease;
+}
+.gq-progress-meta { font-size: .9rem; color: var(--muted); margin-top: .35rem; }
 
-.gq-modal-p { margin-bottom: 8px; }
-.gq-muted { color: #475569; }
+/* ---------- Modal = Shadow Pop-up (match CC) ---------- */
+.gq-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px; z-index: 1000; animation: gq-fade-in .18s ease-out;
+}
+.gq-modal       { max-width: 640px; width: 100%; }
+.gq-modal-title { margin-top: 0; color: var(--text); font-family: "Nunito","Quicksand",system-ui; font-size: 1.25rem; font-weight: 800; }
+.gq-modal-body  { margin: 12px 0; color: var(--text); }
+.gq-modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.gq-modal .card,
+.gq-modal .gq-card,
+.gq-modal .gq-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.1rem 1.1rem 1rem;
+  box-shadow: 0 30px 60px rgba(0,0,0,.18), var(--shadow);
+  animation: gq-pop .16s ease-out;
+}
+.gq-modal-p { margin-bottom: 8px; color: var(--text); }
+.gq-muted   { color: var(--muted); }
+
+@keyframes gq-pop     { 0% { transform: translateY(4px) scale(.98); opacity: 0; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+@keyframes gq-fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- Buttons (prev / next / check) unified ---------- */
+.quiz-nav { display: flex; gap: .5rem; align-items: center; }
+.quiz-nav .btn,
+.gq-check,
+.gq-btn {
+  display: inline-block;
+  padding: .6rem .9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.05);
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--brand);
+  color: #fff;
+  transition: background .15s ease, filter .15s ease, transform .03s ease-in;
+}
+.quiz-nav .btn:hover,
+.gq-check:hover,
+.gq-btn:hover { filter: brightness(.99); }
+.quiz-nav .btn.secondary { background: var(--brand-2); color: #fff; }
+.quiz-nav .btn:active,
+.gq-check:active,
+.gq-btn:active { transform: translateY(1px); }

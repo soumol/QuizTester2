@@ -70,7 +70,7 @@ export const CROSS_CONTAMINATION_BEGINNER = [
     id: "yn_cc_10",
     type: "yn",
     question: "Can you share a pasta strainer when preparing gluten free and non gluten free pasta together?",
-    answer: "Yes",
+    answer: "Yes (if precautions are taken)",
     explanation: "Only if GF pasta is rinsed first and moved to a separate bowl before straining gluten pasta in the same strainer."
   },
   {
@@ -98,7 +98,7 @@ export const CROSS_CONTAMINATION_BEGINNER = [
     id: "yn_cc_14",
     type: "yn",
     question: "Is it okay to share an ice cream scoop when distributing ice cream amongst regular and gluten free cones?",
-    answer: "Yes",
+    answer: "Yes (if precautions are taken)",
     explanation: "Yes—if you wash between scoops or avoid double-dipping. Otherwise, cone crumbs contaminate the scoop."
   },
   {
@@ -125,9 +125,9 @@ export const CROSS_CONTAMINATION_BEGINNER = [
       "Non-stick pots/pans",
       "Silicon, metal cooking utensils",
       "4 slot toaster with 2 slots dedicated gluten-free.",
-      "None of the above."
+      "None of the above (if precaution is used)."
     ],
-    answer: "None of the above.",
+    answer: "None of the above (if precaution is used).",
     explanation: "Dedicated tools aren’t strictly required if thoroughly cleaned (many still dedicate toaster slots to reduce risk)."
   },
   {

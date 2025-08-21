@@ -3,6 +3,7 @@ import React from "react";
 import { GENERAL_QUESTIONS } from "../../data/generalQuestions.js";
 import "../../quiz-general.css";
 
+
 function shuffle(arr) {
   return [...arr].sort(() => Math.random() - 0.5);
 }
@@ -184,6 +185,7 @@ export default function GeneralKnowledge() {
         </div>
 
         <h1>Celiac Disease General Knowledge Quiz</h1>
+        
         <div className="question">{current.question}</div>
         <div className="gq-row">{renderChoices()}</div>
 
